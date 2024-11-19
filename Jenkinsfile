@@ -5,17 +5,22 @@ pipeline {
         TIMESTAMP = "${currentBuild.startTimeInMillis}"
         // Docker credentials and Docker Hub registry
         registryCredential = 'dockerhub-credentials-id'
-        registry = 'monish898/studentsurvey'
+        registry = 'monish898/studentsurveyapp'
     }
 
     stages {
-        stage('Clone Repository') {
+        stage("Build war file") {
             steps {
-                // Clone the repository
-                checkout scm
+                script {
+                    checkout scm
+                    bat 'mvn package'
+                    dir('C:\Users\ADMIN\Downloads\StudentSurveyApp\StudentSurveyApp\target') {
+                        bat 'del app.jar'
+                        bat 'ren StudentSurveyApp-0.0.1-SNAPSHOT.jar app.jar'
+                    }
+                }
             }
         }
-
         stage('Build Docker Image') {
             steps {
                 script {

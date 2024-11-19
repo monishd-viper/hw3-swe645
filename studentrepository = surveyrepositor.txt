@@ -1,0 +1,3 @@
+studentrepository = surveyrepository
+Student.java = Survey.java
+controller.java= SurveyController.java

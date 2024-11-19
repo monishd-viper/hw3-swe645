@@ -1,0 +1,55 @@
+package com.example.StudentSurveyApp.model;
+
+import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+import lombok.Data;
+
+@Entity
+@Table(name="student_survey_form")
+@Data
+public class Survey {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "street_address")
+    private String streetAddress;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "state")
+    private String state;
+
+    @Column(name = "zip_code")
+    private String zipCode;
+
+    @Column(name = "phone_no")
+    private String phoneNo;
+
+    @Column(name = "email_id")
+    private String emailId;
+
+    @Column(name = "date_of_survey")
+    private Date dateOfSurvey;
+
+    @Column(name = "campus_liked_most")
+    private String campusLikedMost;
+
+    @Column(name = "interest_source_univ")
+    private String interestSourceUniv;
+
+    @Column(name = "recommend_likely")
+    private String recommendLikely;
+}
