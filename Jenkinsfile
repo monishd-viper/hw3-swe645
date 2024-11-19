@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    bat 'mvn package'
+                    bat 'mvn clean package'
                     dir('/Users/ADMIN/Downloads/StudentSurveyApp/StudentSurveyApp/target') {
                         bat 'del app.jar'
                         bat 'ren StudentSurveyApp-0.0.1-SNAPSHOT.jar app.jar'
