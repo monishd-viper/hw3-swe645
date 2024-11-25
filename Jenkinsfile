@@ -5,7 +5,7 @@ pipeline {
         TIMESTAMP = "${currentBuild.startTimeInMillis}"
         // Docker credentials and Docker Hub registry
         registryCredential = 'dockerhub-credentials-id'
-        registry = 'monish898/studentsurveyapp'
+        registry = 'monish898/studentsurveyapp4'
     }
 
     stages {
@@ -14,7 +14,7 @@ pipeline {
                 script {
                     checkout scm
                     bat 'mvn clean package'
-                    dir('C:/Users/ADMIN/.jenkins/workspace/hw3-swe645/target') {
+                    dir('C:/Users/ADMIN/.jenkins/workspace/hw3-lastfinal/target') {
                         bat 'del app.jar'
                         bat 'ren StudentSurveyApp-0.0.1-SNAPSHOT.jar app.jar'
                     }
