@@ -5,7 +5,7 @@ pipeline {
         TIMESTAMP = "${currentBuild.startTimeInMillis}"
         // Docker credentials and Docker Hub registry
         registryCredential = 'dockerhub-credentials-id'
-        registry = 'monish898/studentsurveyapp4'
+        registry = 'monish898/studentsurveyapp'
     }
 
     stages {
