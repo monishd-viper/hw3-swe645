@@ -13,7 +13,7 @@ public class SurveyController {
     @Autowired
     private SurveyService surveyservice;
 
-    @GetMapping(value="/getAll")
+    @GetMapping(value="/getAllStudents")
     public List<Survey> getAll() {
         return surveyservice.findAll();
     }
